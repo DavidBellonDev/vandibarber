@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initCarousel();
+  initHeroCarousel();
 });
 
 function initMobileNav() {
@@ -136,4 +137,42 @@ function initCarousel() {
 
   createDots();
   updateCarousel();
+}
+
+function initHeroCarousel() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+
+  if (slides.length === 0) return;
+
+  let current = 0;
+  let intervalId;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current]?.classList.remove('active');
+
+    current = (index + slides.length) % slides.length;
+
+    slides[current].classList.add('active');
+    dots[current]?.classList.add('active');
+  }
+
+  function next() {
+    goTo(current + 1);
+  }
+
+  function startAutoplay() {
+    clearInterval(intervalId);
+    intervalId = setInterval(next, 5500);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      goTo(i);
+      startAutoplay();
+    });
+  });
+
+  startAutoplay();
 }

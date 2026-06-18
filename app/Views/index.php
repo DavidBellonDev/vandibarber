@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="img/barbeiro.png" type="image/x-icon">
 </head>
 <body>
   <header class="header" id="topo">
@@ -31,6 +32,11 @@
 
   <main>
     <section class="hero">
+      <div class="hero-carousel" aria-hidden="true">
+        <div class="hero-slide active" style="background-image: url('img/img1.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('img/img2.jpg');"></div>
+        <div class="hero-slide" style="background-image: url('img/img3.jpg');"></div>
+      </div>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <p class="hero-tag">Barbearia Premium · Itu-SP</p>
@@ -43,6 +49,11 @@
           </a>
           <a href="#servicos" class="btn btn-outline">Ver serviços</a>
         </div>
+      </div>
+      <div class="hero-indicators" aria-label="Slides do banner">
+        <button class="hero-dot active" aria-label="Imagem 1"></button>
+        <button class="hero-dot" aria-label="Imagem 2"></button>
+        <button class="hero-dot" aria-label="Imagem 3"></button>
       </div>
     </section>
 
@@ -195,6 +206,11 @@
         </div>
 
         <div class="carousel-dots" role="tablist" aria-label="Navegação de serviços"></div>
+        <div class="schedule-cta">
+          <a href="https://chat.inbarberapp.com/?id=28fb4a00-1877-4344-84d5-a6332d8b0b32" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
+            Agendar com Assistente
+          </a>
+        </div>
       </div>
     </section>
 
@@ -234,12 +250,6 @@
             <span class="schedule-day">Segunda-feira</span>
             <span class="schedule-time">Fechado</span>
           </div>
-        </div>
-
-        <div class="schedule-cta">
-          <a href="https://chat.inbarberapp.com/?id=28fb4a00-1877-4344-84d5-a6332d8b0b32" class="btn btn-gold" target="_blank" rel="noopener noreferrer">
-            Agendar com Assistente
-          </a>
         </div>
       </div>
     </section>
